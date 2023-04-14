@@ -10,8 +10,19 @@
     <!-- <router-link to="/home" tag="button" replace active-class="active">首页</router-link> -->
     <!-- <router-link to="/about" tag="button" replace active-class="active">关于</router-link> -->
     
-    <button @click="homeClick">首页</button>
-    <button @click="aboutClick">关于</button>
+    <!-- <button @click="homeClick">首页</button> -->
+    <!-- <button @click="aboutClick">关于</button> -->
+
+    <router-link to="/home">首页</router-link>
+    <router-link to="/about">关于</router-link>
+
+    <!-- 动态路由 -->
+    <!-- <router-link to="/user/zhangsan">用户</router-link> -->
+
+    <!-- <router-link to="/user/+userId">用户</router-link>,这样写不行,url后面直接是/user/+userId,通过v-bind解决 -->
+    <!-- 动态拼接,通过v-bind -->
+    <!-- 加''代表是字符串 -->
+    <router-link :to="'/user/'+userId">用户</router-link>
 
     <!-- 该标签会根据当前的路径，动态渲染出不同的路由组件，它决定路由组件在页面中的位置（路由切换时，切换的是<router-view>挂载的路由组件，其他内容不会改变） -->
     <router-view></router-view>
@@ -23,18 +34,24 @@ export default {
   name: 'App',
   
   // 通过代码的方式修改路由
-  methods: {
-    homeClick() {
-      // this.$router.push('/home')
-      this.$router.replace('/home')
-      console.log('homeClick');
-    },
-    aboutClick() {
-      // this.$router.push('/about')
-      this.$router.replace('/about')
-      console.log('aboutClick');
+  // methods: {
+  //   homeClick() {
+  //     // this.$router.push('/home')
+  //     this.$router.replace('/home')
+  //     console.log('homeClick');
+  //   },
+  //   aboutClick() {
+  //     // this.$router.push('/about')
+  //     this.$router.replace('/about')
+  //     console.log('aboutClick');
+  //   }
+  // }
+
+  data() {
+    return {
+      userId: 'zhangsan'
     }
-  }
+  },
 }
 </script>
 

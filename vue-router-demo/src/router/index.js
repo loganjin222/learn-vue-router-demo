@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue, { useAttrs } from 'vue'
 
 
 // 1. 导入路由对象；并且调用Vue.use()，通过Vue.use(插件)来安装插件
@@ -6,6 +6,8 @@ import Router from 'vue-router'
 
 import Home from '../components/home'
 import About from '../components/about'
+
+import User from '../components/user'
 
 Vue.use(Router)
 
@@ -27,6 +29,10 @@ const routes = [
         path: '/about',
         component: About
     },
+    {
+        path: '/user/:userId',
+        component: User
+    }
 ]
 
 // 2. 创建路由实例
