@@ -11,6 +11,14 @@ Vue.use(Router)
 
 
 const routes = [
+    // 此前没有实现默认显示首页组件，还需要用户点击。通过以下设置可以实现默认显示首页组件
+    {
+        // 根路径
+        path: '/',
+        // path: '', 这样写也可以
+        // 重定向，将根路径重定向到/home的路径下
+        redirect: '/home'
+    },
     {
         path: '/home',
         component: Home
