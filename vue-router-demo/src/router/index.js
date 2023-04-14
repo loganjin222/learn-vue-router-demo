@@ -35,7 +35,10 @@ const router = new Router({
     // routes: [
 
     // ]
-    routes
+    routes,
+
+    // 默认情况下，路径的改变使用的是URL的hash，这种方式有#，可以通过下面的设置使用HTML5的history模式
+    mode: 'history'
 }) 
 
 
