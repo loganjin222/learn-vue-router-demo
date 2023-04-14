@@ -17,3 +17,7 @@ const router = new Router({
     // ]
     routes
 }) 
+
+
+// 3. 在Vue实例中挂载创建的路由实例
+export default router
