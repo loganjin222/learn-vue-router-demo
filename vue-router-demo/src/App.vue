@@ -28,12 +28,16 @@
     <!-- <router-link to="/profile">简介</router-link> -->
     <!-- <router-link :to="{path: '/profile'}">简介</router-link> -->
 
+    <!-- query第一种传递参数的方式: 通过<router-link>传递参数 -->
     <!-- 此时url显示为http://localhost:8080/profile?name=loganjin&age=30 -->
     <router-link 
     :to="{
       path: '/profile',
       query: {name: 'loganjin', age: '30'}
     }">简介</router-link>
+
+    <!-- query第二种传递参数的方式: 通过代码的方式传递参数 -->
+    <!-- <button @click="profileClick">简介</button> -->
 
     <!-- 该标签会根据当前的路径，动态渲染出不同的路由组件，它决定路由组件在页面中的位置（路由切换时，切换的是<router-view>挂载的路由组件，其他内容不会改变） -->
     <router-view></router-view>
@@ -55,6 +59,18 @@ export default {
   //     // this.$router.push('/about')
   //     this.$router.replace('/about')
   //     console.log('aboutClick');
+  //   }
+  // }
+
+  // methods {
+  //   profileClick() {
+  //     this.$router.push({
+  //       path: '/profile',
+  //       query: {
+  //         name: 'loganjin',
+  //         age: '30'
+  //       }
+  //     })
   //   }
   // }
 
