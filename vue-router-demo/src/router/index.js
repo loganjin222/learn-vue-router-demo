@@ -53,9 +53,14 @@ const routes = [
         component: () => import('../components/about')
     },
     {
+        // :后面的名字可以随便取
         path: '/user/:id',
         // component: User
         component: () => import('../components/user')
+    },
+    {
+        path: '/profile',
+        component: () => import('../components/profile')
     }
 ]
 

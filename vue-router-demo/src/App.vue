@@ -16,13 +16,24 @@
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
 
-    <!-- 动态路由 -->
+    <!-- 某些情况下, 一个页面的path路径可能是不确定的. 比如当我们进入页面时, 可能是/user/aaa, 也可能是/user/bbb, 除了有前面的/user外, 后面还加上了用户的id. 这种path和component之间的匹配关系叫做动态路由(父项user确定, 子项不确定) -->
     <!-- <router-link to="/user/zhangsan">用户</router-link> -->
 
-    <!-- <router-link to="/user/+userId">用户</router-link>,这样写不行,url后面直接是/user/+userId,通过v-bind解决 -->
-    <!-- 动态拼接,通过v-bind -->
+    <!-- <router-link to="/user/+userId">用户</router-link>, 这样写不行, url后面直接是/user/+userId, 通过v-bind解决 -->
+    <!-- 动态拼接, 通过v-bind -->
     <!-- 加''代表是字符串 -->
     <router-link :to="'/user/'+userId">用户</router-link>
+
+    <!-- 在进行路由跳转的时候, 有些参数是希望传递给跳转过去的路由的, 有两种方式, 第一种方式是配置动态路由, 第二种方式是使用query -->
+    <!-- <router-link to="/profile">简介</router-link> -->
+    <!-- <router-link :to="{path: '/profile'}">简介</router-link> -->
+
+    <!-- 此时url显示为http://localhost:8080/profile?name=loganjin&age=30 -->
+    <router-link 
+    :to="{
+      path: '/profile',
+      query: {name: 'loganjin', age: '30'}
+    }">简介</router-link>
 
     <!-- 该标签会根据当前的路径，动态渲染出不同的路由组件，它决定路由组件在页面中的位置（路由切换时，切换的是<router-view>挂载的路由组件，其他内容不会改变） -->
     <router-view></router-view>
