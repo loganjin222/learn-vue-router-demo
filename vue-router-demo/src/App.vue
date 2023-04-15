@@ -25,6 +25,7 @@
     <router-link :to="'/user/'+userId">用户</router-link>
 
     <!-- 在进行路由跳转的时候, 有些参数是希望传递给跳转过去的路由的, 有两种方式, 第一种方式是配置动态路由, 第二种方式是使用query -->
+    params和query的选择: 如果有大量的数据需要传, 用query(REASON: query传入一个对象, params传入一个符号)
     <!-- <router-link to="/profile">简介</router-link> -->
     <!-- <router-link :to="{path: '/profile'}">简介</router-link> -->
 
