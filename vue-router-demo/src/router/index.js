@@ -26,7 +26,26 @@ const routes = [
     {
         path: '/home',
         // component: Home
-        component: () => import('../components/home')
+        component: () => import('../components/home'),
+
+        // 实现嵌套路由的步骤: 
+        // 1. 创建对应的路由子组件, 并且配置路由和路由子组件之间的映射关系
+        // 2. 通过<router-link>、<router-view>在父路由组件内部使用
+        children: [
+            {
+                path: '',
+                redirect: 'message'
+            },
+            {
+                path: 'message',
+                component: () => import('../components/message')
+            },
+            {
+                path: 'news',
+                component: () => import('../components/news')
+            },
+            
+        ]
     },
     {
         path: '/about',
