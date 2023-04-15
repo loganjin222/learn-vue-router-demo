@@ -32,6 +32,7 @@ const routes = [
         // 1. 创建对应的路由子组件, 并且配置路由和路由子组件之间的映射关系
         // 2. 通过<router-link>、<router-view>在父路由组件内部使用
         children: [
+            // 是路由子组件不加/, 加了页面会不显示
             {
                 path: '',
                 redirect: 'message'
@@ -43,8 +44,7 @@ const routes = [
             {
                 path: 'news',
                 component: () => import('../components/news')
-            },
-            
+            }
         ]
     },
     {
